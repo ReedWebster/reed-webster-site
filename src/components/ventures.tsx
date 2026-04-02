@@ -17,13 +17,7 @@ const ventures: Venture[] = [
     tags: ["Founder", "Marketing", "Growth"],
     href: "https://vantamarketing.co",
   },
-  {
-    name: "Templar AI LLC",
-    description: "AI consulting firm helping Utah businesses integrate intelligent automation.",
-    tags: ["Co-Founder", "AI", "Consulting"],
-    href: "#",
-  },
-  {
+{
     name: "Rock Canyon AI",
     description: "Exploring applied AI solutions for real-world business challenges.",
     tags: ["Founder", "AI", "Product"],
