@@ -1,6 +1,4 @@
 import { getAllPosts } from "@/lib/posts";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -12,10 +10,10 @@ export function WritingPreview() {
       <div className="mx-auto max-w-5xl">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
               Writing
             </h2>
-            <p className="mt-2 text-muted-foreground">Thoughts on AI, strategy, and building.</p>
+            <p className="mt-3 text-muted-foreground">Thoughts on AI, strategy, and building.</p>
           </div>
           <Link
             href="/blog"
@@ -27,33 +25,36 @@ export function WritingPreview() {
         </div>
 
         {posts.length === 0 ? (
-          <p className="mt-10 text-sm text-muted-foreground">Posts coming soon.</p>
+          <p className="mt-12 text-sm text-muted-foreground">Posts coming soon.</p>
         ) : (
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <Card className="h-full transition-colors hover:border-primary/30">
-                  <CardHeader>
-                    <p className="text-xs text-muted-foreground">
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </p>
-                    <CardTitle className="mt-1 text-base">{post.title}</CardTitle>
-                    <CardDescription className="mt-1 line-clamp-2">
-                      {post.excerpt}
-                    </CardDescription>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardHeader>
-                </Card>
+                <div className="group h-full rounded-[24px] border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]">
+                  <p className="text-xs text-muted-foreground">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <h3 className="mt-2 font-heading text-lg text-card-foreground">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </Link>
             ))}
           </div>

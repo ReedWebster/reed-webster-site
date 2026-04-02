@@ -15,10 +15,10 @@ export function Contact() {
   return (
     <SectionWrapper id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="font-heading text-center text-3xl tracking-tight text-foreground sm:text-4xl">
           Let&apos;s Connect
         </h2>
-        <p className="mt-2 text-center text-muted-foreground">
+        <p className="mt-3 text-center text-muted-foreground">
           Book a call or reach out through any channel.
         </p>
 
@@ -27,7 +27,7 @@ export function Contact() {
             href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            className="btn-primary inline-flex items-center gap-2 text-sm"
           >
             <Video className="h-4 w-4" />
             Schedule a Google Meet
@@ -41,15 +41,15 @@ export function Contact() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:text-foreground hover:-translate-y-0.5"
               aria-label={s.label}
             >
               <s.icon className="h-4 w-4" />
             </a>
           ))}
           <a
-            href="mailto:reed@reedwebster.com"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground"
+            href="mailto:reedwebster7284@gmail.com"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:text-foreground hover:-translate-y-0.5"
             aria-label="Email"
           >
             <Mail className="h-4 w-4" />
@@ -62,7 +62,7 @@ export function Contact() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border px-6 py-8">
+    <footer className="mx-6 mb-6 mt-12 rounded-[24px] bg-background/70 backdrop-blur-xl border border-border/50 px-6 py-8">
       <div className="mx-auto max-w-5xl text-center text-xs text-muted-foreground">
         &copy; {new Date().getFullYear()} Reed Webster. All rights reserved.
       </div>

@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
+import { DM_Serif_Display, DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
 
-const inter = Inter({
+const dmSerifDisplay = DM_Serif_Display({
+  weight: "400",
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-logo",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -54,9 +54,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${geistSans.variable} ${geistMono.variable}`}
+      className={`${dmSerifDisplay.variable} ${dmSans.variable} ${outfit.variable}`}
     >
-      <body className="antialiased">
+      <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Nav />
           <main>{children}</main>

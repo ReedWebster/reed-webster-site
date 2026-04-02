@@ -1,5 +1,4 @@
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
-import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/contact";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
@@ -47,19 +46,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               day: "numeric",
             })}
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="mt-3 font-heading text-4xl tracking-tight text-foreground sm:text-5xl">
             {post.meta.title}
           </h1>
           <div className="mt-4 flex flex-wrap gap-2">
             {post.meta.tags.map((tag: string) => (
-              <Badge key={tag} variant="secondary">
+              <span
+                key={tag}
+                className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+              >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         </header>
 
-        <div className="prose prose-neutral mt-10 max-w-none dark:prose-invert prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+        <div className="prose prose-neutral mt-10 max-w-none dark:prose-invert prose-headings:font-heading prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
           <MDXRemote source={post.content} />
         </div>
       </article>

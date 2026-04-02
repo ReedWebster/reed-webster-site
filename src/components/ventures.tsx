@@ -1,7 +1,5 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { SectionWrapper } from "./section-wrapper";
 import { ArrowUpRight } from "lucide-react";
 
@@ -17,7 +15,7 @@ const ventures: Venture[] = [
     name: "Vanta Marketing Co.",
     description: "Paid social and lead generation agency for growth-stage companies.",
     tags: ["Founder", "Marketing", "Growth"],
-    href: "#",
+    href: "https://vantamarketing.co",
   },
   {
     name: "Templar AI LLC",
@@ -37,44 +35,47 @@ export function Ventures() {
   return (
     <SectionWrapper id="ventures" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
           Ventures
         </h2>
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-3 text-muted-foreground">
           Companies and projects I&apos;m building.
         </p>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ventures.map((v) => (
-            <Card
+            <div
               key={v.name}
-              className="group relative transition-colors hover:border-primary/30"
+              className="group relative rounded-[24px] border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]"
             >
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <CardTitle className="text-lg">{v.name}</CardTitle>
-                  {v.href && (
-                    <a
-                      href={v.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground transition-colors group-hover:text-primary"
-                      aria-label={`Visit ${v.name}`}
-                    >
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  )}
-                </div>
-                <CardDescription className="mt-1">{v.description}</CardDescription>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {v.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardHeader>
-            </Card>
+              <div className="flex items-start justify-between">
+                <h3 className="font-heading text-lg text-card-foreground">{v.name}</h3>
+                {v.href && (
+                  <a
+                    href={v.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors group-hover:text-primary"
+                    aria-label={`Visit ${v.name}`}
+                  >
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {v.description}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {v.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

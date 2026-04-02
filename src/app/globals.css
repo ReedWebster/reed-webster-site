@@ -4,48 +4,55 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 98%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 224 76% 48%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 6% 10%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 240 5% 96%;
-    --accent-foreground: 240 6% 10%;
+    /* Warm neutral palette inspired by Vessel AI */
+    --background: 20 20% 97.6%;       /* #f9f8f8 */
+    --foreground: 15 12% 9.4%;        /* #1a1615 */
+    --card: 25 18% 92%;               /* #f0eae5 */
+    --card-foreground: 15 12% 9.4%;   /* #1a1615 */
+    --popover: 20 20% 97.6%;
+    --popover-foreground: 15 12% 9.4%;
+    --primary: 204 52% 47%;           /* #3b82b8 teal blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 28 18% 89%;          /* #e8e2db warm sand */
+    --secondary-foreground: 15 8% 24%;/* #453f3d */
+    --muted: 28 18% 89%;
+    --muted-foreground: 10 3% 45%;    /* #757170 taupe */
+    --accent: 197 92% 59%;            /* #38bdf8 cyan */
+    --accent-foreground: 15 12% 9.4%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 224 76% 48%;
-    --radius: 0.625rem;
+    --success: 152 87% 34%;           /* #0ea158 */
+    --border: 15 2% 85%;              /* translucent brown-ish */
+    --input: 15 2% 85%;
+    --ring: 204 52% 47%;
+    --radius: 1.5rem;                 /* 24px for cards */
+
+    /* Warm shadows */
+    --shadow-color: 15 20% 32%;
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 93%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 93%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 93%;
-    --primary: 224 76% 56%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 93%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 93%;
+    --background: 16 15% 7.5%;        /* #141110 */
+    --foreground: 28 18% 89%;         /* #e8e2db */
+    --card: 16 14% 11%;              /* #1e1a17 */
+    --card-foreground: 28 18% 89%;
+    --popover: 16 14% 11%;
+    --popover-foreground: 28 18% 89%;
+    --primary: 204 52% 52%;           /* slightly brighter teal for dark */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 16 12% 16%;
+    --secondary-foreground: 28 18% 89%;
+    --muted: 16 12% 16%;
+    --muted-foreground: 15 3% 55%;
+    --accent: 197 92% 59%;
+    --accent-foreground: 28 18% 89%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 18%;
-    --ring: 224 76% 56%;
+    --border: 16 8% 18%;
+    --input: 16 8% 20%;
+    --ring: 204 52% 52%;
+
+    --shadow-color: 0 0% 0%;
   }
 }
 
@@ -58,5 +65,76 @@
   }
   html {
     scroll-behavior: smooth;
+  }
+}
+
+/* Warm card hover effect */
+@layer utilities {
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -8px hsl(var(--shadow-color) / 0.12);
+    border-top: 2px solid hsl(var(--primary));
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-background/70 backdrop-blur-xl border border-border/50;
+  }
+  .dark .glass {
+    @apply bg-background/60;
+  }
+
+  /* Primary button gradient */
+  .btn-primary {
+    background: linear-gradient(135deg, #1a1615 0%, #1a2a3d 100%);
+    @apply text-white rounded-full px-8 py-3.5 font-medium transition-all duration-300;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -4px hsl(var(--shadow-color) / 0.2);
+  }
+  .dark .btn-primary {
+    background: linear-gradient(135deg, #e8e2db 0%, #c8bfb4 100%);
+    @apply text-[#141110];
+  }
+
+  /* Fade-in-up animation */
+  .fade-in-up {
+    animation: fadeInUp 0.7s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(48px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Word reveal animation */
+  .word-reveal {
+    animation: wordReveal 0.6s ease-out forwards;
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  @keyframes wordReveal {
+    from {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
   }
 }

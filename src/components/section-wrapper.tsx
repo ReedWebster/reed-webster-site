@@ -13,10 +13,10 @@ export function SectionWrapper({ children, id, className = "" }: SectionWrapperP
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       className={className}
     >
       {children}
