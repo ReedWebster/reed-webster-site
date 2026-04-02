@@ -15,9 +15,9 @@ const links = [
 
 const socials = [
   { icon: LinkedInIcon, href: "https://linkedin.com/in/reedwebster", label: "LinkedIn" },
-  { icon: XIcon, href: "https://twitter.com/reedwebster", label: "Twitter" },
-  { icon: GitHubIcon, href: "https://github.com/reedwebster", label: "GitHub" },
-  { icon: InstagramIcon, href: "https://instagram.com/reedwebster", label: "Instagram" },
+  { icon: XIcon, href: "https://twitter.com/reedwebster4", label: "Twitter" },
+  { icon: GitHubIcon, href: "https://github.com/ReedWebster", label: "GitHub" },
+  { icon: InstagramIcon, href: "https://instagram.com/reed.webster", label: "Instagram" },
 ];
 
 export function Nav() {
