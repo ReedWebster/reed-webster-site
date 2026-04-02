@@ -2,8 +2,7 @@
 
 import { SectionWrapper } from "./section-wrapper";
 import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon } from "./social-icons";
-import { Mail } from "lucide-react";
-import Script from "next/script";
+import { Mail, Video } from "lucide-react";
 
 const socials = [
   { icon: LinkedInIcon, href: "https://linkedin.com/in/reedwebster", label: "LinkedIn" },
@@ -23,16 +22,16 @@ export function Contact() {
           Book a call or reach out through any channel.
         </p>
 
-        <div className="mt-10">
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/reedwebster?hide_gdpr_banner=1"
-            style={{ minWidth: "320px", height: "630px" }}
-          />
-          <Script
-            src="https://assets.calendly.com/assets/external/widget.js"
-            strategy="lazyOnload"
-          />
+        <div className="mt-10 flex justify-center">
+          <a
+            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            <Video className="h-4 w-4" />
+            Schedule a Google Meet
+          </a>
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-3">

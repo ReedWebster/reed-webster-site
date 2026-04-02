@@ -53,7 +53,7 @@ export function Hero() {
           className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a
-            href="https://calendly.com/reedwebster"
+            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
