@@ -34,12 +34,13 @@ export const experiences: ExperienceEntry[] = [
     current: true,
   },
   {
-    title: "Property Manager",
+    title: "Leasing Agent",
     organization: "Arden Place Apartments",
     location: "Orem, UT",
-    period: "2023 — 2024",
+    period: "2023 — Present",
     description:
-      "Managed day-to-day operations, tenant relations, and maintenance coordination for a multi-unit property.",
+      "Managing leasing operations, tenant relations, and property tours for a multi-unit apartment community.",
+    current: true,
   },
   {
     title: "B.S. Strategy",
