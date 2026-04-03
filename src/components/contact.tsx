@@ -5,8 +5,8 @@ import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon } from "./social-icons";
 import { Mail, Video } from "lucide-react";
 
 const socials = [
-  { icon: LinkedInIcon, href: "https://linkedin.com/in/reedwebster", label: "LinkedIn" },
-  { icon: XIcon, href: "https://twitter.com/reedwebster4", label: "Twitter" },
+  { icon: LinkedInIcon, href: "https://www.linkedin.com/in/reed-webster/", label: "LinkedIn" },
+  { icon: XIcon, href: "https://x.com/ReedWebste95668", label: "Twitter" },
   { icon: GitHubIcon, href: "https://github.com/ReedWebster", label: "GitHub" },
   { icon: InstagramIcon, href: "https://instagram.com/reed.webster", label: "Instagram" },
 ];

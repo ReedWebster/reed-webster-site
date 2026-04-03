@@ -15,14 +15,14 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto h-[320px] w-[250px] rotate-1 overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_16px_48px_-12px_hsl(var(--shadow-color)/0.22)] sm:h-[440px] sm:w-[340px] lg:order-2 lg:mx-0"
+          className="mx-auto h-[380px] w-[295px] rotate-1 overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_16px_48px_-12px_hsl(var(--shadow-color)/0.22)] sm:h-[520px] sm:w-[400px] lg:order-2 lg:mx-0"
         >
           <Image
             src="/reedwebster.jpeg"
             alt="Reed Webster"
-            width={340}
-            height={440}
-            className="h-full w-full object-cover object-[center_15%]"
+            width={400}
+            height={520}
+            className="h-full w-full scale-125 object-cover object-[center_20%]"
             priority
           />
         </motion.div>

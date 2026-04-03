@@ -26,6 +26,13 @@ const ventures: Venture[] = [
     href: "#",
     accentColor: "border-l-emerald-500",
   },
+  {
+    name: "BYU AI in Business Society",
+    description: "Driving AI literacy and applied projects within the BYU business community.",
+    tags: ["Leadership", "AI", "Community"],
+    href: "#",
+    accentColor: "border-l-violet-500",
+  },
 ];
 
 export function Ventures() {
@@ -36,7 +43,7 @@ export function Ventures() {
           Portfolio
         </p>
         <h2 className="mt-2 font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
-          Ventures
+          Ventures &amp; Projects
         </h2>
         <p className="mt-3 text-muted-foreground">
           Companies and projects I&apos;m building.
