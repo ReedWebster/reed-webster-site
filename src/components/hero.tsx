@@ -22,7 +22,7 @@ export function Hero() {
             alt="Reed Webster"
             width={176}
             height={176}
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-[center_15%] scale-125"
             priority
           />
         </motion.div>
