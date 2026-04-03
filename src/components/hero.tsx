@@ -62,9 +62,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 lg:mx-0"
           >
-            BYU junior studying strategy at the Marriott School of Management, building
-            ventures at the intersection of AI and business. Co-founder of Vanta Marketing Co.
-            Active leader in the BYU AI in Business Society.
+            Building ventures at the intersection of AI and business. Co-founder of
+            Vanta Marketing LLC. Active leader in the BYU AI in Business Society.
           </motion.p>
 
           <motion.div

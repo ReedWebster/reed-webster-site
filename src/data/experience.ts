@@ -10,7 +10,7 @@ export interface ExperienceEntry {
 export const experiences: ExperienceEntry[] = [
   {
     title: "Co-Founder",
-    organization: "Vanta Marketing Co.",
+    organization: "Vanta Marketing LLC",
     period: "2024 — Present",
     description:
       "Built a paid social and lead generation agency serving growth-stage companies.",

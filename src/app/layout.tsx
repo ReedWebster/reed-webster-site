@@ -26,7 +26,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Reed Webster — Strategy, AI & Entrepreneurship",
   description:
-    "BYU junior building ventures at the intersection of AI and business. Co-founder of Vanta Marketing Co. and Templar AI.",
+    "BYU junior building ventures at the intersection of AI and business. Co-founder of Vanta Marketing LLC and Templar AI.",
   metadataBase: new URL("https://reedwebster.com"),
   openGraph: {
     title: "Reed Webster",

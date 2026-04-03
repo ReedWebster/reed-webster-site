@@ -13,7 +13,7 @@ interface Venture {
 
 const ventures: Venture[] = [
   {
-    name: "Vanta Marketing Co.",
+    name: "Vanta Marketing LLC",
     description: "Paid social and lead generation agency for growth-stage companies.",
     tags: ["Founder", "Marketing", "Growth"],
     href: "https://vantamarketing.co",
