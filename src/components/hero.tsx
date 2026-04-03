@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Calendar } from "lucide-react";
+import Image from "next/image";
 
 const nameWords = ["Reed", "Webster"];
 
@@ -9,6 +10,23 @@ export function Hero() {
   return (
     <section id="about" className="relative flex min-h-screen items-center justify-center px-6">
       <div className="mx-auto max-w-3xl text-center">
+        {/* Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto mb-8 h-44 w-44 overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_8px_32px_-8px_hsl(var(--shadow-color)/0.15)]"
+        >
+          <Image
+            src="/reedwebster.jpeg"
+            alt="Reed Webster"
+            width={176}
+            height={176}
+            className="h-full w-full object-cover object-top"
+            priority
+          />
+        </motion.div>
+
         {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
