@@ -26,7 +26,7 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <div className="group rounded-[24px] border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                     <p className="text-xs text-muted-foreground">
                       {new Date(post.date).toLocaleDateString("en-US", {
                         year: "numeric",
@@ -34,7 +34,7 @@ export default function BlogPage() {
                         day: "numeric",
                       })}
                     </p>
-                    <div className="flex gap-1.5">
+                    <div className="flex flex-wrap gap-1.5">
                       {post.tags.map((tag) => (
                         <span
                           key={tag}

@@ -6,7 +6,7 @@ export function Academic() {
   return (
     <SectionWrapper className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <div className="mx-auto max-w-2xl rounded-[24px] border border-border/60 bg-card p-10 text-center">
+        <div className="mx-auto max-w-2xl rounded-[24px] border border-border/60 bg-card p-6 text-center sm:p-10">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
             Academic Context
           </p>

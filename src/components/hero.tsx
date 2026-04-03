@@ -9,9 +9,26 @@ const nameWords = ["Reed", "Webster"];
 export function Hero() {
   return (
     <section id="about" className="relative flex min-h-screen items-center justify-center px-6">
-      <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[1fr_auto]">
-        {/* Text — left side */}
-        <div>
+      <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-12">
+        {/* Photo — shows first on mobile, right side on desktop */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mx-auto h-[280px] w-[220px] overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_12px_40px_-8px_hsl(var(--shadow-color)/0.18)] sm:h-[360px] sm:w-[280px] lg:order-2 lg:mx-0"
+        >
+          <Image
+            src="/reedwebster.jpeg"
+            alt="Reed Webster"
+            width={280}
+            height={360}
+            className="h-full w-full object-cover object-[center_15%]"
+            priority
+          />
+        </motion.div>
+
+        {/* Text — shows second on mobile, left side on desktop */}
+        <div className="text-center lg:order-1 lg:text-left">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -21,7 +38,7 @@ export function Hero() {
             Strategy &middot; AI &middot; Entrepreneurship
           </motion.p>
 
-          <h1 className="mt-6 font-heading text-5xl tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-heading text-4xl tracking-tight text-foreground sm:text-5xl lg:text-7xl">
             {nameWords.map((word, i) => (
               <motion.span
                 key={word}
@@ -32,7 +49,7 @@ export function Hero() {
                   delay: 0.3 + i * 0.2,
                   ease: "easeOut",
                 }}
-                className="mr-4 inline-block"
+                className="mr-3 inline-block sm:mr-4"
               >
                 {word}
               </motion.span>
@@ -43,7 +60,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 lg:mx-0"
           >
             BYU junior studying strategy at the Marriott School of Management, building
             ventures at the intersection of AI and business. Co-founder of Vanta Marketing Co.
@@ -54,7 +71,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            className="mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:flex-row lg:justify-start"
           >
             <a
               href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0"
@@ -74,23 +91,6 @@ export function Hero() {
             </a>
           </motion.div>
         </div>
-
-        {/* Photo — right side */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto h-[360px] w-[280px] overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_12px_40px_-8px_hsl(var(--shadow-color)/0.18)] lg:mx-0"
-        >
-          <Image
-            src="/reedwebster.jpeg"
-            alt="Reed Webster"
-            width={280}
-            height={360}
-            className="h-full w-full object-cover object-[center_15%]"
-            priority
-          />
-        </motion.div>
       </div>
     </section>
   );

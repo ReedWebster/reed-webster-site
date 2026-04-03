@@ -14,12 +14,12 @@ export function Experience() {
           Where I&apos;ve been and what I&apos;ve built.
         </p>
 
-        <div className="relative mt-12 ml-4 border-l-2 border-border pl-8">
+        <div className="relative mt-12 ml-2 border-l-2 border-border pl-6 sm:ml-4 sm:pl-8">
           {experiences.map((exp, i) => (
             <div key={i} className="relative pb-10 last:pb-0">
               {/* Timeline dot */}
               <div
-                className={`absolute -left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 transition-colors ${
+                className={`absolute -left-[calc(1.5rem+5px)] sm:-left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 transition-colors ${
                   exp.current
                     ? "border-primary bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.4)]"
                     : "border-muted-foreground/40 bg-background"
