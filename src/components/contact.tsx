@@ -15,7 +15,10 @@ export function Contact() {
   return (
     <SectionWrapper id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <h2 className="font-heading text-center text-3xl tracking-tight text-foreground sm:text-4xl">
+        <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Get in Touch
+        </p>
+        <h2 className="mt-2 font-heading text-center text-3xl tracking-tight text-foreground sm:text-4xl">
           Let&apos;s Connect
         </h2>
         <p className="mt-3 text-center text-muted-foreground">
@@ -60,11 +63,56 @@ export function Contact() {
   );
 }
 
+const footerLinks = [
+  { label: "About", href: "#about" },
+  { label: "Ventures", href: "#ventures" },
+  { label: "Experience", href: "#experience" },
+  { label: "Writing", href: "#writing" },
+  { label: "Contact", href: "#contact" },
+];
+
 export function Footer() {
   return (
-    <footer className="mx-6 mb-6 mt-12 rounded-[24px] bg-background/70 backdrop-blur-xl border border-border/50 px-6 py-8">
-      <div className="mx-auto max-w-5xl text-center text-xs text-muted-foreground">
-        &copy; {new Date().getFullYear()} Reed Webster. All rights reserved.
+    <footer className="mx-6 mb-6 mt-12 rounded-[24px] bg-background/70 backdrop-blur-xl border border-border/50 px-6 py-10">
+      <div className="mx-auto max-w-5xl">
+        <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+          <div className="text-center sm:text-left">
+            <p className="font-logo text-lg font-semibold tracking-tight text-foreground">
+              Reed Webster
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Strategy, AI &amp; Entrepreneurship
+            </p>
+          </div>
+          <nav className="flex flex-wrap justify-center gap-4">
+            {footerLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <div className="flex gap-2">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
+                aria-label={s.label}
+              >
+                <s.icon className="h-3.5 w-3.5" />
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="mt-6 border-t border-border/40 pt-4 text-center text-xs text-muted-foreground">
+          &copy; {new Date().getFullYear()} Reed Webster. All rights reserved.
+        </div>
       </div>
     </footer>
   );

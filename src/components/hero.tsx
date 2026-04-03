@@ -15,7 +15,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto h-[320px] w-[250px] overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_12px_40px_-8px_hsl(var(--shadow-color)/0.18)] sm:h-[440px] sm:w-[340px] lg:order-2 lg:mx-0"
+          className="mx-auto h-[320px] w-[250px] rotate-1 overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_16px_48px_-12px_hsl(var(--shadow-color)/0.22)] sm:h-[440px] sm:w-[340px] lg:order-2 lg:mx-0"
         >
           <Image
             src="/reedwebster.jpeg"
@@ -33,12 +33,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-sm font-medium uppercase tracking-[0.2em] text-primary"
+            className="text-base font-medium uppercase tracking-[0.15em] text-primary"
           >
             Strategy &middot; AI &middot; Entrepreneurship
           </motion.p>
 
-          <h1 className="mt-6 font-heading text-4xl tracking-tight text-foreground sm:text-5xl lg:text-7xl">
+          <h1 className="mt-6 font-heading text-4xl leading-tight tracking-tight text-foreground sm:text-5xl lg:text-7xl">
             {nameWords.map((word, i) => (
               <motion.span
                 key={word}
@@ -84,10 +84,10 @@ export function Hero() {
             </a>
             <a
               href="#ventures"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary/60 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full border border-border/80 px-8 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary/60 hover:-translate-y-0.5"
             >
               See my work
-              <ArrowDown className="h-4 w-4" />
+              <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
             </a>
           </motion.div>
         </div>

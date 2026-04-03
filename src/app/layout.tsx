@@ -57,6 +57,8 @@ export default function RootLayout({
       className={`${dmSerifDisplay.variable} ${dmSans.variable} ${outfit.variable}`}
     >
       <body className="font-sans antialiased">
+        {/* Top accent gradient bar */}
+        <div className="fixed top-0 left-0 z-[60] h-[3px] w-full bg-gradient-to-r from-primary via-accent to-primary" />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Nav />
           <main>{children}</main>

@@ -24,10 +24,15 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10">
         <Hero />
+        <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
         <Ventures />
+        <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
         <Experience />
+        <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
         <WritingPreview />
+        <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
         <Academic />
+        <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
         <Contact />
         <Footer />
       </div>

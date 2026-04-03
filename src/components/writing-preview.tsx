@@ -10,7 +10,10 @@ export function WritingPreview() {
       <div className="mx-auto max-w-5xl">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              Blog
+            </p>
+            <h2 className="mt-2 font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
               Writing
             </h2>
             <p className="mt-3 text-muted-foreground">Thoughts on AI, strategy, and building.</p>

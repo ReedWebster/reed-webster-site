@@ -8,6 +8,7 @@ interface Venture {
   description: string;
   tags: string[];
   href?: string;
+  accentColor: string;
 }
 
 const ventures: Venture[] = [
@@ -16,12 +17,14 @@ const ventures: Venture[] = [
     description: "Paid social and lead generation agency for growth-stage companies.",
     tags: ["Founder", "Marketing", "Growth"],
     href: "https://vantamarketing.co",
+    accentColor: "border-l-blue-500",
   },
-{
+  {
     name: "Rock Canyon AI",
     description: "Exploring applied AI solutions for real-world business challenges.",
     tags: ["Founder", "AI", "Product"],
     href: "#",
+    accentColor: "border-l-emerald-500",
   },
 ];
 
@@ -29,7 +32,10 @@ export function Ventures() {
   return (
     <SectionWrapper id="ventures" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <h2 className="font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Portfolio
+        </p>
+        <h2 className="mt-2 font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
           Ventures
         </h2>
         <p className="mt-3 text-muted-foreground">
@@ -40,7 +46,7 @@ export function Ventures() {
           {ventures.map((v) => (
             <div
               key={v.name}
-              className="group relative rounded-[24px] border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]"
+              className={`group relative rounded-[24px] border border-border/60 border-l-[3px] ${v.accentColor} bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]`}
             >
               <div className="flex items-start justify-between">
                 <h3 className="font-heading text-lg text-card-foreground">{v.name}</h3>

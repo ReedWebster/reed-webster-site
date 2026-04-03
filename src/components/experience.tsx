@@ -7,7 +7,10 @@ export function Experience() {
   return (
     <SectionWrapper id="experience" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <h2 className="font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Background
+        </p>
+        <h2 className="mt-2 font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
           Experience
         </h2>
         <p className="mt-3 text-muted-foreground">
@@ -26,10 +29,17 @@ export function Experience() {
                 }`}
               />
 
-              <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-                {exp.period}
-              </p>
-              <h3 className="mt-1.5 font-heading text-lg text-foreground">
+              <div className="flex items-center gap-2">
+                <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                  {exp.period}
+                </p>
+                {exp.current && (
+                  <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    Current
+                  </span>
+                )}
+              </div>
+              <h3 className={`mt-1.5 font-heading text-foreground ${exp.current ? "text-xl" : "text-lg"}`}>
                 {exp.title}
                 <span className="font-sans text-base font-normal text-muted-foreground">
                   {" "}
