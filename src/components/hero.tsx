@@ -8,7 +8,7 @@ const nameWords = ["Reed", "Webster"];
 
 export function Hero() {
   return (
-    <section id="about" className="relative flex min-h-screen items-center justify-center px-6">
+    <section id="about" className="relative flex min-h-screen items-center justify-center px-6 pt-20 lg:pt-0">
       <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-12">
         {/* Photo — shows first on mobile, right side on desktop */}
         <motion.div
