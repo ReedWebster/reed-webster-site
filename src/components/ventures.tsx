@@ -2,6 +2,7 @@
 
 import { SectionWrapper } from "./section-wrapper";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 interface Venture {
   name: string;
@@ -9,6 +10,8 @@ interface Venture {
   tags: string[];
   href?: string;
   accentColor: string;
+  logo?: string;
+  logoFallback?: string;
 }
 
 const ventures: Venture[] = [
@@ -18,6 +21,7 @@ const ventures: Venture[] = [
     tags: ["Founder", "Marketing", "Growth"],
     href: "https://vantamarketing.co",
     accentColor: "border-l-blue-500",
+    logo: "/vanta-logo.png",
   },
   {
     name: "Rock Canyon AI",
@@ -25,6 +29,7 @@ const ventures: Venture[] = [
     tags: ["Founder", "AI", "Product"],
     href: "#",
     accentColor: "border-l-emerald-500",
+    logoFallback: "RC",
   },
   {
     name: "BYU AI in Business Society",
@@ -32,6 +37,15 @@ const ventures: Venture[] = [
     tags: ["Leadership", "AI", "Community"],
     href: "#",
     accentColor: "border-l-violet-500",
+    logoFallback: "AI",
+  },
+  {
+    name: "Nxt Property Management",
+    description: "Leasing operations, tenant relations, and property tours for a multi-unit apartment community.",
+    tags: ["Leasing Agent", "Real Estate", "Operations"],
+    href: "https://nxtpropertymanagement.com",
+    accentColor: "border-l-amber-500",
+    logo: "/nxt-logo.png",
   },
 ];
 
@@ -49,25 +63,34 @@ export function Ventures() {
           Companies and projects I&apos;m building.
         </p>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {ventures.map((v) => (
             <div
               key={v.name}
               className={`group relative rounded-[24px] border border-border/60 border-l-[3px] ${v.accentColor} bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]`}
             >
-              <div className="flex items-start justify-between">
-                <h3 className="font-heading text-lg text-card-foreground">{v.name}</h3>
-                {v.href && (
-                  <a
-                    href={v.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors group-hover:text-primary"
-                    aria-label={`Visit ${v.name}`}
-                  >
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                )}
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-secondary">
+                  {v.logo ? (
+                    <Image src={v.logo} alt={v.name} width={40} height={40} className="h-full w-full object-contain p-1" />
+                  ) : (
+                    <span className="text-xs font-bold text-primary">{v.logoFallback}</span>
+                  )}
+                </div>
+                <div className="flex flex-1 items-start justify-between">
+                  <h3 className="font-heading text-lg text-card-foreground">{v.name}</h3>
+                  {v.href && (
+                    <a
+                      href={v.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground transition-colors group-hover:text-primary"
+                      aria-label={`Visit ${v.name}`}
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {v.description}
