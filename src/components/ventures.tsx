@@ -12,6 +12,7 @@ interface Venture {
   logo?: string;
   logoFallback?: string;
   logoBg?: string;
+  logoWide?: boolean;
   status?: string;
   statusColor?: string;
 }
@@ -32,6 +33,7 @@ const ventures: Venture[] = [
     description: "AI consulting firm helping businesses integrate intelligent automation. Ended up pivoting the team and learnings into Vanta Marketing, building an agency powered by AI.",
     tags: ["Founder", "AI", "Product"],
     logo: "/rock-canyon-logo.png",
+    logoWide: true,
     logoBg: "bg-emerald-50 dark:bg-emerald-950/40",
     status: "Pivoted",
     statusColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
@@ -80,9 +82,9 @@ export function Ventures() {
             >
               {/* Header: logo + name + status */}
               <div className="flex items-center gap-3">
-                <div className={`flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-transparent`}>
+                <div className={`flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-transparent ${v.logoWide ? "h-20 w-40" : "h-20 w-20"}`}>
                   {v.logo ? (
-                    <Image src={v.logo} alt={v.name} width={80} height={80} className="h-full w-full object-contain" />
+                    <Image src={v.logo} alt={v.name} width={v.logoWide ? 160 : 80} height={80} className="h-full w-full object-contain" />
                   ) : (
                     <span className="text-sm font-bold text-primary">{v.logoFallback}</span>
                   )}
