@@ -31,7 +31,7 @@ const ventures: Venture[] = [
     name: "Rock Canyon AI",
     description: "Built an AI consulting firm helping businesses integrate intelligent automation. Didn't work out, but learned a ton about shipping fast and selling AI.",
     tags: ["Founder", "AI", "Product"],
-    logoFallback: "RC",
+    logo: "/rock-canyon-logo.jpeg",
     logoBg: "bg-emerald-50 dark:bg-emerald-950/40",
     status: "Sunset",
     statusColor: "bg-muted text-muted-foreground",
@@ -40,7 +40,7 @@ const ventures: Venture[] = [
     name: "BYU AI in Business Society",
     description: "Driving AI literacy and applied projects within the BYU business community.",
     tags: ["Leadership", "AI", "Community"],
-    logoFallback: "AI",
+    logo: "/byu-ai-logo.jpeg",
     logoBg: "bg-violet-50 dark:bg-violet-950/40",
     status: "Active",
     statusColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
@@ -79,9 +79,9 @@ export function Ventures() {
             >
               {/* Header: logo + name + status */}
               <div className="flex items-center gap-3">
-                <div className={`flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl ${v.logoBg}`}>
+                <div className={`flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-transparent`}>
                   {v.logo ? (
-                    <Image src={v.logo} alt={v.name} width={44} height={44} className="h-full w-full object-contain p-1.5" />
+                    <Image src={v.logo} alt={v.name} width={56} height={56} className="h-full w-full object-contain" />
                   ) : (
                     <span className="text-sm font-bold text-primary">{v.logoFallback}</span>
                   )}
