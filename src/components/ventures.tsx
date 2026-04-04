@@ -19,7 +19,7 @@ interface Venture {
 const ventures: Venture[] = [
   {
     name: "Vanta Marketing",
-    description: "Paid social and lead generation agency for growth-stage companies.",
+    description: "AI-powered paid social and lead generation agency for growth-stage companies. We handle end-to-end campaign strategy, creative production, and performance optimization to drive scalable customer acquisition.",
     tags: ["Founder", "Marketing", "Growth"],
     href: "https://vantamarketing.co",
     logo: "/vanta-logo.png",
@@ -29,12 +29,12 @@ const ventures: Venture[] = [
   },
   {
     name: "Rock Canyon AI",
-    description: "Built an AI consulting firm helping businesses integrate intelligent automation. Didn't work out, but learned a ton about shipping fast and selling AI.",
+    description: "AI consulting firm helping businesses integrate intelligent automation. Ended up pivoting the team and learnings into Vanta Marketing, building an agency powered by AI.",
     tags: ["Founder", "AI", "Product"],
     logo: "/rock-canyon-logo.png",
     logoBg: "bg-emerald-50 dark:bg-emerald-950/40",
-    status: "Sunset",
-    statusColor: "bg-muted text-muted-foreground",
+    status: "Pivoted",
+    statusColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
   },
   {
     name: "BYU AI in Business Society",
