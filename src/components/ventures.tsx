@@ -82,9 +82,9 @@ export function Ventures() {
             >
               {/* Header: logo + name + status */}
               <div className="flex items-center gap-3">
-                <div className={`flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-transparent ${v.logoWide ? "h-20 w-40" : "h-20 w-20"}`}>
+                <div className={`flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-transparent ${v.logoWide ? "h-24 w-56" : "h-20 w-20"}`}>
                   {v.logo ? (
-                    <Image src={v.logo} alt={v.name} width={v.logoWide ? 160 : 80} height={80} className="h-full w-full object-contain" />
+                    <Image src={v.logo} alt={v.name} width={v.logoWide ? 224 : 80} height={v.logoWide ? 96 : 80} className="h-full w-full object-contain" />
                   ) : (
                     <span className="text-sm font-bold text-primary">{v.logoFallback}</span>
                   )}
