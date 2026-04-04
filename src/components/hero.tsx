@@ -29,14 +29,20 @@ export function Hero() {
 
         {/* Text — shows second on mobile, left side on desktop */}
         <div className="text-center lg:order-1 lg:text-left">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-base font-medium uppercase tracking-[0.15em] text-primary"
+            className="flex flex-col items-center gap-3 lg:items-start"
           >
-            Strategy &middot; AI &middot; Entrepreneurship
-          </motion.p>
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+              Open to opportunities
+            </span>
+            <p className="text-base font-medium uppercase tracking-[0.15em] text-primary">
+              Strategy &middot; AI &middot; Entrepreneurship
+            </p>
+          </motion.div>
 
           <h1 className="mt-6 font-heading text-4xl leading-tight tracking-tight text-foreground sm:text-5xl lg:text-7xl">
             {nameWords.map((word, i) => (

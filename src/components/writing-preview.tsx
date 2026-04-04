@@ -1,10 +1,7 @@
-import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, PenLine } from "lucide-react";
 
 export function WritingPreview() {
-  const posts = getAllPosts().slice(0, 3);
-
   return (
     <section id="writing" className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
@@ -27,49 +24,15 @@ export function WritingPreview() {
           </Link>
         </div>
 
-        {posts.length === 0 ? (
-          <p className="mt-12 text-sm text-muted-foreground">Posts coming soon.</p>
-        ) : (
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <div className="group h-full rounded-[24px] border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-t-2 hover:border-t-primary hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)]">
-                  <p className="text-xs text-muted-foreground">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                  <h3 className="mt-2 font-heading text-lg text-card-foreground">
-                    {post.title}
-                  </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-                    {post.excerpt}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            ))}
+        <div className="mt-12 flex flex-col items-center rounded-[24px] border border-border/60 bg-card px-6 py-16 text-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+            <PenLine className="h-5 w-5 text-primary" />
           </div>
-        )}
-
-        <Link
-          href="/blog"
-          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary transition-opacity hover:opacity-80 sm:hidden"
-        >
-          View all posts
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+          <h3 className="mt-4 font-heading text-xl text-foreground">Coming Soon</h3>
+          <p className="mt-2 max-w-sm text-sm text-muted-foreground">
+            I&apos;m working on articles about AI, strategy, and entrepreneurship. Check back soon.
+          </p>
+        </div>
       </div>
     </section>
   );

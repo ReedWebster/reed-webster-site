@@ -14,10 +14,10 @@ const links = [
 ];
 
 const socials = [
-  { icon: LinkedInIcon, href: "https://www.linkedin.com/in/reed-webster/", label: "LinkedIn" },
-  { icon: XIcon, href: "https://x.com/ReedWebste95668", label: "Twitter" },
-  { icon: GitHubIcon, href: "https://github.com/ReedWebster", label: "GitHub" },
-  { icon: InstagramIcon, href: "https://instagram.com/reed.webster", label: "Instagram" },
+  { icon: LinkedInIcon, href: "https://www.linkedin.com/in/reed-webster/", label: "LinkedIn", hoverColor: "hover:text-[#0A66C2]" },
+  { icon: XIcon, href: "https://x.com/ReedWebste95668", label: "Twitter", hoverColor: "hover:text-foreground" },
+  { icon: GitHubIcon, href: "https://github.com/ReedWebster", label: "GitHub", hoverColor: "hover:text-foreground" },
+  { icon: InstagramIcon, href: "https://instagram.com/reed.webster", label: "Instagram", hoverColor: "hover:text-[#E4405F]" },
 ];
 
 export function Nav() {
@@ -66,7 +66,7 @@ export function Nav() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary/60"
+                className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors ${s.hoverColor} hover:bg-secondary/60`}
                 aria-label={s.label}
               >
                 <s.icon className="h-3.5 w-3.5" />

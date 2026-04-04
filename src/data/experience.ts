@@ -17,15 +17,6 @@ export const experiences: ExperienceEntry[] = [
     current: true,
   },
   {
-    title: "Co-Founder",
-    organization: "Templar AI LLC",
-    location: "Utah",
-    period: "2024 — Present",
-    description:
-      "AI consulting firm helping businesses integrate intelligent automation into their workflows.",
-    current: true,
-  },
-  {
     title: "Leadership",
     organization: "BYU AI in Business Society",
     period: "2023 — Present",

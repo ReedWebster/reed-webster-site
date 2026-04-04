@@ -5,10 +5,10 @@ import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon } from "./social-icons";
 import { Mail, Video } from "lucide-react";
 
 const socials = [
-  { icon: LinkedInIcon, href: "https://www.linkedin.com/in/reed-webster/", label: "LinkedIn" },
-  { icon: XIcon, href: "https://x.com/ReedWebste95668", label: "Twitter" },
-  { icon: GitHubIcon, href: "https://github.com/ReedWebster", label: "GitHub" },
-  { icon: InstagramIcon, href: "https://instagram.com/reed.webster", label: "Instagram" },
+  { icon: LinkedInIcon, href: "https://www.linkedin.com/in/reed-webster/", label: "LinkedIn", hoverColor: "hover:text-[#0A66C2] hover:border-[#0A66C2]/40" },
+  { icon: XIcon, href: "https://x.com/ReedWebste95668", label: "Twitter", hoverColor: "hover:text-foreground hover:border-foreground/40" },
+  { icon: GitHubIcon, href: "https://github.com/ReedWebster", label: "GitHub", hoverColor: "hover:text-foreground hover:border-foreground/40" },
+  { icon: InstagramIcon, href: "https://instagram.com/reed.webster", label: "Instagram", hoverColor: "hover:text-[#E4405F] hover:border-[#E4405F]/40" },
 ];
 
 export function Contact() {
@@ -44,7 +44,7 @@ export function Contact() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:text-foreground hover:-translate-y-0.5"
+              className={`inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-all duration-300 ${s.hoverColor} hover:-translate-y-0.5`}
               aria-label={s.label}
             >
               <s.icon className="h-4 w-4" />

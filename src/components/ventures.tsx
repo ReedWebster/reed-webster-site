@@ -43,7 +43,7 @@ const ventures: Venture[] = [
     description: "Driving AI literacy and applied projects within the BYU business community.",
     tags: ["Leadership", "AI", "Community"],
     href: "https://aiinbusinesssociety.org",
-    logo: "/byu-ai-logo.png",
+    logoFallback: "AI",
     logoBg: "bg-violet-50 dark:bg-violet-950/40",
     status: "Active",
     statusColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
