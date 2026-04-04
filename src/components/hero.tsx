@@ -69,7 +69,7 @@ export function Hero() {
             className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 lg:mx-0"
           >
             Building ventures at the intersection of AI and business. Co-founder of
-            Vanta Marketing. Active leader in the BYU AI in Business Society.
+            Vanta Marketing. VP of the BYU AI in Business Society.
           </motion.p>
 
           <motion.div

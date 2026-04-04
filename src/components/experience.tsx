@@ -17,31 +17,39 @@ export function Experience() {
           Where I&apos;ve been and what I&apos;ve built.
         </p>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+        <div className="relative mt-12 ml-2 border-l-2 border-border pl-6 sm:ml-4 sm:pl-8">
           {experiences.map((exp, i) => (
-            <div
-              key={i}
-              className="group relative flex flex-col rounded-[24px] border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_hsl(var(--shadow-color)/0.12)] hover:border-primary/30"
-            >
-              <div className="flex items-center justify-between">
+            <div key={i} className="relative pb-10 last:pb-0">
+              {/* Timeline dot */}
+              <div
+                className={`absolute -left-[calc(1.5rem+5px)] sm:-left-[calc(2rem+5px)] top-1.5 h-3 w-3 rounded-full border-2 transition-colors ${
+                  exp.current
+                    ? "border-primary bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.4)]"
+                    : "border-muted-foreground/40 bg-background"
+                }`}
+              />
+
+              <div className="flex items-center gap-2">
                 <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
                   {exp.period}
                 </p>
                 {exp.current && (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+                  <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
                     Current
                   </span>
                 )}
               </div>
-              <h3 className="mt-2 font-heading text-xl text-foreground">
+              <h3 className={`mt-1.5 font-heading text-foreground ${exp.current ? "text-xl" : "text-lg"}`}>
                 {exp.title}
+                <span className="font-sans text-base font-normal text-muted-foreground">
+                  {" "}
+                  — {exp.organization}
+                </span>
               </h3>
-              <p className="mt-0.5 text-sm text-muted-foreground">
-                {exp.organization}
-                {exp.location && ` — ${exp.location}`}
-              </p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+              {exp.location && (
+                <p className="mt-0.5 text-xs text-muted-foreground">{exp.location}</p>
+              )}
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {exp.description}
               </p>
             </div>
