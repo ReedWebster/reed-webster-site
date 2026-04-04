@@ -31,7 +31,7 @@ const ventures: Venture[] = [
     name: "Rock Canyon AI",
     description: "Built an AI consulting firm helping businesses integrate intelligent automation. Didn't work out, but learned a ton about shipping fast and selling AI.",
     tags: ["Founder", "AI", "Product"],
-    logo: "/rock-canyon-logo.jpeg",
+    logo: "/rock-canyon-logo.png",
     logoBg: "bg-emerald-50 dark:bg-emerald-950/40",
     status: "Sunset",
     statusColor: "bg-muted text-muted-foreground",
