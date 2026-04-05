@@ -15,16 +15,22 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto h-[380px] w-[295px] rotate-1 overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_16px_48px_-12px_hsl(var(--shadow-color)/0.22)] sm:h-[520px] sm:w-[400px] lg:order-2 lg:mx-0"
+          className="relative mx-auto lg:order-2 lg:mx-0"
         >
-          <Image
-            src="/reedwebster.jpeg"
-            alt="Reed Webster"
-            width={400}
-            height={520}
-            className="h-full w-full scale-125 object-cover object-[center_20%]"
-            priority
-          />
+          {/* Glassmorphism card behind photo */}
+          <div className="absolute -bottom-4 -right-4 h-[380px] w-[295px] rounded-2xl bg-primary/10 backdrop-blur-xl border border-primary/20 sm:h-[520px] sm:w-[400px]" />
+          <div className="absolute -top-4 -left-4 h-[380px] w-[295px] rounded-2xl bg-accent/8 backdrop-blur-xl border border-accent/15 sm:h-[520px] sm:w-[400px]" />
+          {/* Photo */}
+          <div className="relative h-[380px] w-[295px] rotate-1 overflow-hidden rounded-2xl border-2 border-border/60 shadow-[0_16px_48px_-12px_hsl(var(--shadow-color)/0.22)] sm:h-[520px] sm:w-[400px]">
+            <Image
+              src="/reedwebster.jpeg"
+              alt="Reed Webster"
+              width={400}
+              height={520}
+              className="h-full w-full scale-125 object-cover object-[center_20%]"
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Text — shows second on mobile, left side on desktop */}
