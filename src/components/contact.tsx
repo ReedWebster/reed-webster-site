@@ -2,7 +2,7 @@
 
 import { SectionWrapper } from "./section-wrapper";
 import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon } from "./social-icons";
-import { Mail, Video } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const socials = [
   { icon: LinkedInIcon, href: "https://www.linkedin.com/in/reed-webster/", label: "LinkedIn", hoverColor: "hover:text-[#0A66C2] hover:border-[#0A66C2]/40" },
@@ -22,18 +22,23 @@ export function Contact() {
           Let&apos;s Connect
         </h2>
         <p className="mt-3 text-center text-muted-foreground">
-          Book a call or reach out through any channel.
+          Give me a call or shoot me an email.
         </p>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex justify-center gap-4">
           <a
-            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+18014980754"
             className="btn-primary inline-flex items-center gap-2 text-sm"
           >
-            <Video className="h-4 w-4" />
-            Schedule a Google Meet
+            <Phone className="h-4 w-4" />
+            (801) 498-0754
+          </a>
+          <a
+            href="mailto:reedwebster7284@gmail.com"
+            className="inline-flex items-center gap-2 rounded-full border border-border/80 px-8 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary/60 hover:-translate-y-0.5"
+          >
+            <Mail className="h-4 w-4" />
+            Email Me
           </a>
         </div>
 

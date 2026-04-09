@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Calendar } from "lucide-react";
+import { ArrowDown, Phone, Mail } from "lucide-react";
 import Image from "next/image";
 
 const nameWords = ["Reed", "Webster"];
@@ -85,13 +85,18 @@ export function Hero() {
             className="mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:flex-row lg:justify-start"
           >
             <a
-              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+18014980754"
               className="btn-primary inline-flex items-center gap-2 text-sm"
             >
-              <Calendar className="h-4 w-4" />
-              Book a Call
+              <Phone className="h-4 w-4" />
+              Call Me
+            </a>
+            <a
+              href="mailto:reedwebster7284@gmail.com"
+              className="group inline-flex items-center gap-2 rounded-full border border-border/80 px-8 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary/60 hover:-translate-y-0.5"
+            >
+              <Mail className="h-4 w-4" />
+              Email Me
             </a>
             <a
               href="#ventures"
