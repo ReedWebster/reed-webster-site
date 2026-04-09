@@ -1,5 +1,4 @@
 import { Hero } from "@/components/hero";
-import { Stats } from "@/components/stats";
 import { Ventures } from "@/components/ventures";
 import { Experience } from "@/components/experience";
 import { WritingPreview } from "@/components/writing-preview";
@@ -17,7 +16,6 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10">
         <Hero />
-        <Stats />
         <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
         <Ventures />
         <div className="mx-auto max-w-5xl px-6"><div className="h-px bg-border/50" /></div>
