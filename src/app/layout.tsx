@@ -3,6 +3,7 @@ import { DM_Serif_Display, DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
+import { CursorFollower } from "@/components/cursor-follower";
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: "400",
@@ -60,6 +61,7 @@ export default function RootLayout({
         {/* Top accent gradient bar */}
         <div className="fixed top-0 left-0 z-[60] h-[3px] w-full bg-gradient-to-r from-primary via-accent to-primary" />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <CursorFollower />
           <Nav />
           <main>{children}</main>
         </ThemeProvider>
