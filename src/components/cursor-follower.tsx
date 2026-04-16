@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import {
   motion,
   useMotionValue,
@@ -12,7 +12,6 @@ import {
 import { useTheme } from "next-themes";
 
 const SIZE = 600;
-const INTERACTIVE = "a, button, [role='button'], input, textarea, select, summary, label";
 const IDLE_DELAY_MS = 2500;
 
 export function CursorFollower() {
@@ -28,19 +27,13 @@ export function CursorFollower() {
   const springY = useSpring(y, { damping: 28, stiffness: 70, mass: 1 });
   const springScale = useSpring(scale, { damping: 18, stiffness: 220 });
 
-  const hoveringRef = useRef(false);
-
   useEffect(() => {
     if (reducedMotion) return;
     if (typeof window === "undefined") return;
     if (window.matchMedia("(hover: none)").matches) return;
 
-    let lastTime = performance.now();
-    let lastX = 0;
-    let lastY = 0;
     let idleTimer: ReturnType<typeof setTimeout> | null = null;
     let idleAnimation: AnimationPlaybackControls | null = null;
-    let clickAnimation: AnimationPlaybackControls | null = null;
 
     const stopIdle = () => {
       if (idleTimer) {
@@ -51,10 +44,15 @@ export function CursorFollower() {
         idleAnimation.stop();
         idleAnimation = null;
       }
+      scale.set(1);
     };
 
     const scheduleIdle = () => {
-      stopIdle();
+      if (idleTimer) clearTimeout(idleTimer);
+      if (idleAnimation) {
+        idleAnimation.stop();
+        idleAnimation = null;
+      }
       idleTimer = setTimeout(() => {
         idleAnimation = animate(scale, [1, 1.15, 1], {
           duration: 3.5,
@@ -65,70 +63,17 @@ export function CursorFollower() {
     };
 
     const handleMove = (e: MouseEvent) => {
-      const now = performance.now();
-      const dt = Math.max(now - lastTime, 1);
-      const dx = e.clientX - lastX;
-      const dy = e.clientY - lastY;
-      const speed = Math.hypot(dx, dy) / dt; // px/ms
-      const speedBoost = Math.min(speed * 0.25, 0.6);
-
       x.set(e.clientX - SIZE / 2);
       y.set(e.clientY - SIZE / 2);
-
-      if (!hoveringRef.current && !clickAnimation) {
-        scale.set(1 + speedBoost);
-      }
-
-      lastTime = now;
-      lastX = e.clientX;
-      lastY = e.clientY;
       scheduleIdle();
     };
 
-    const handleOver = (e: MouseEvent) => {
-      const t = e.target as Element | null;
-      if (t?.closest?.(INTERACTIVE)) {
-        hoveringRef.current = true;
-        stopIdle();
-        if (!clickAnimation) scale.set(0.45);
-      }
-    };
-
-    const handleOut = (e: MouseEvent) => {
-      const t = e.target as Element | null;
-      if (t?.closest?.(INTERACTIVE)) {
-        hoveringRef.current = false;
-        if (!clickAnimation) scale.set(1);
-      }
-    };
-
-    const handleClick = () => {
-      if (clickAnimation) clickAnimation.stop();
-      stopIdle();
-      const anim = animate(scale, [scale.get(), 1.7, hoveringRef.current ? 0.45 : 1], {
-        duration: 0.5,
-        ease: "easeOut",
-        onComplete: () => {
-          if (clickAnimation === anim) clickAnimation = null;
-        },
-      });
-      clickAnimation = anim;
-    };
-
     window.addEventListener("mousemove", handleMove);
-    window.addEventListener("mouseover", handleOver);
-    window.addEventListener("mouseout", handleOut);
-    window.addEventListener("mousedown", handleClick);
-
     scheduleIdle();
 
     return () => {
       window.removeEventListener("mousemove", handleMove);
-      window.removeEventListener("mouseover", handleOver);
-      window.removeEventListener("mouseout", handleOut);
-      window.removeEventListener("mousedown", handleClick);
       stopIdle();
-      if (clickAnimation) clickAnimation.stop();
     };
   }, [x, y, scale, reducedMotion]);
 
