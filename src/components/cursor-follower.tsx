@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const SIZE = 600;
 
 export function CursorFollower() {
-  const x = useMotionValue(-9999);
-  const y = useMotionValue(-9999);
+  // Start with the orb's center at the top-left corner (0, 0)
+  const x = useMotionValue(-SIZE / 2);
+  const y = useMotionValue(-SIZE / 2);
+
+  const springX = useSpring(x, { damping: 28, stiffness: 70, mass: 1 });
+  const springY = useSpring(y, { damping: 28, stiffness: 70, mass: 1 });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -27,8 +31,8 @@ export function CursorFollower() {
       aria-hidden
       className="pointer-events-none fixed left-0 top-0 z-0 rounded-full blur-3xl"
       style={{
-        x,
-        y,
+        x: springX,
+        y: springY,
         width: SIZE,
         height: SIZE,
         background:
