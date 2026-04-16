@@ -17,7 +17,7 @@ export const experiences: ExperienceEntry[] = [
     current: true,
   },
   {
-    title: "Vice President",
+    title: "President",
     organization: "AI in Business Society",
     period: "2023 — Present",
     description:

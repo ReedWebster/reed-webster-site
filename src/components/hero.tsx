@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Phone, Mail } from "lucide-react";
+import { ArrowDown, Phone, Mail, FileText } from "lucide-react";
 import Image from "next/image";
 
 const nameWords = ["Reed", "Webster"];
@@ -75,7 +75,7 @@ export function Hero() {
             className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-8 lg:mx-0"
           >
             Building ventures at the intersection of AI and business. Co-founder of
-            Vanta Marketing. VP of the BYU AI in Business Society.
+            Vanta Marketing. President of the BYU AI in Business Society.
           </motion.p>
 
           <motion.div
@@ -97,6 +97,15 @@ export function Hero() {
             >
               <Mail className="h-4 w-4" />
               Email Me
+            </a>
+            <a
+              href="/Reed_Webster_Resume_2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full border border-border/80 px-8 py-3.5 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary/60 hover:-translate-y-0.5"
+            >
+              <FileText className="h-4 w-4" />
+              Resume
             </a>
             <a
               href="#ventures"
