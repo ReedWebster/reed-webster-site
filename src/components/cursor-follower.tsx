@@ -23,12 +23,12 @@ export function CursorFollower() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60 blur-3xl"
+      className="pointer-events-none fixed left-0 top-0 z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-90 blur-3xl"
       style={{
         x,
         y,
         background:
-          "radial-gradient(circle, rgba(96,165,250,0.55) 0%, rgba(59,130,246,0.25) 40%, rgba(59,130,246,0) 70%)",
+          "radial-gradient(circle, rgba(37,99,235,0.95) 0%, rgba(59,130,246,0.7) 30%, rgba(96,165,250,0.35) 55%, rgba(59,130,246,0) 75%)",
       }}
     />
   );
